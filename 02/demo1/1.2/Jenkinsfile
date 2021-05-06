@@ -17,7 +17,8 @@ pipeline {
             steps {
                 sh '''
                     docker build -t jaimesalas/jenkins-pipeline-demos-06-05-21:0.0.1
-                    docker run jaimesalas/jenkins-pipeline-demos-06-05-21:0.0.1
+                    docker run --rm --name smoke-test jaimesalas/jenkins-pipeline-demos-06-05-21:0.0.1
+                    doccker stop smoke-test
                 '''
             }
         }
