@@ -7,7 +7,6 @@ pipeline {
             steps {
                 script {
                     image = docker.build("jaimesalas/jenkins-pipeline-demos:0.0.2", "--pull -f 02/Dockerfile 02")
-                    // docker build -t jaimesalas/jenkins-pipeline-demos:0.0.2 -f 02/Dockerfile 02
                     echo "${image}"
                 }
             }
@@ -23,7 +22,7 @@ pipeline {
         stage('Push') {
             steps {
                 script {
-                    withDockerRegistry([credntialsId: "docker-hub", url: ""]) {
+                    withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
                         image.push()
                     }
                 }
