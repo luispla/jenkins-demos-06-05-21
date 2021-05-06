@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    image = docker.build("jaimesalas/jenkins-pipeline-demos:0.0.2", "--pull -f 02/Dockerfile 02")
+                    image = docker.build("luispla/jenkins-pipeline-demos:0.0.2", "--pull -f 02/Dockerfile 02")
                     echo "${image}"
                 }
             }
