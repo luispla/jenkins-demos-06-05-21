@@ -15,7 +15,7 @@ pipeline {
         stage('Smoke Test') {
             steps {
                 script {
-                    constainer = image.run()
+                    container = image.run()
                     container.stop()
                 }
             }
