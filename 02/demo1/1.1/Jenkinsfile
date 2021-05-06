@@ -24,7 +24,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'dotnet build  "$WORKSPACE/02/src/Pi.Web/Pi.Web.csproj'
+                sh 'dotnet build  "$WORKSPACE/02/src/Pi.Web/Pi.Web.csproj"'
             }
         }
 
