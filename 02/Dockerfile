@@ -17,8 +17,8 @@ RUN dotnet publish -c Release -o /out Pi.Web.csproj
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1.1
 
 EXPOSE 80
-CMD [ "dotnet", "Pi.Web.dll" ]
-# CMD [ "-m", "console", "-dp", "6" ]
+ENTRYPOINT [ "dotnet", "Pi.Web.dll" ]
+CMD [ "-m", "console", "-dp", "6" ]
 
 WORKDIR /app
 COPY --from=builder /out/ .
