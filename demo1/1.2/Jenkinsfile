@@ -10,6 +10,7 @@ pipeline {
             environment {
                 LOG_LEVEL='INFO'
             }
+            
             parallel {
                 stage('linux-arm64') {
                     steps {
@@ -27,7 +28,6 @@ pipeline {
                     }
                 }    
             }
-            
         }
 
         stage('Test') {
